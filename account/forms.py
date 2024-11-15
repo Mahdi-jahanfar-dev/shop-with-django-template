@@ -40,3 +40,11 @@ class UserUpdateForm(forms.ModelForm):
         model = User
         fields = ['email', 'phone_number', 'full_name', 'password']
 
+
+
+class RegisterForm(forms.Form):
+
+    phone_number = forms.CharField(max_length=11)
+    password = forms.CharField(widget=forms.PasswordInput())
+    email = forms.EmailField()
+    full_name = forms.CharField(label='full name')
