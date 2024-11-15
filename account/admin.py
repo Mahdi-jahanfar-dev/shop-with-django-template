@@ -2,8 +2,12 @@ from django.contrib import admin
 from django.contrib.auth.models import Group
 
 from .forms import UserCreationForm, UserUpdateForm
-from .models import User
-# Register your models here.
+from .models import User, OtpCode
+
+
+@admin.register(OtpCode)
+class OtpCodeAdmin(admin.ModelAdmin):
+    list_display = ('phone_number', 'code')
 
 
 class UserAdmin(admin.ModelAdmin):
