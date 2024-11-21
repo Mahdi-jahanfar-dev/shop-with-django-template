@@ -30,7 +30,8 @@ class UserCreationForm(forms.ModelForm):
 
         if commit:
             user.save()
-            return user
+            
+        return user
 
 class UserUpdateForm(forms.ModelForm):
 

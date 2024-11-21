@@ -1,16 +1,16 @@
-from django.contrib import admin
+from django.contrib.auth import admin
 from django.contrib.auth.models import Group
-
+from django.contrib import admin as admn
 from .forms import UserCreationForm, UserUpdateForm
 from .models import User, OtpCode
 
 
-@admin.register(OtpCode)
-class OtpCodeAdmin(admin.ModelAdmin):
+@admn.register(OtpCode)
+class OtpCodeAdmin(admn.ModelAdmin):
     list_display = ('phone_number', 'code')
 
 
-class UserAdmin(admin.ModelAdmin):
+class UserAdmin(admin.UserAdmin):
 
     form = UserUpdateForm
     add_form = UserCreationForm
@@ -27,13 +27,13 @@ class UserAdmin(admin.ModelAdmin):
     )
 
     add_fieldsets = (
-        ({'fields': ('username', 'email', 'password1', 'password2', 'phone_number')})
+        (None, {'fields': ('username', 'email', 'password1', 'password2', 'phone_number')}),
     )
 
     ordering = ('email',)
     filter_horizontal = ()
 
 
-admin.site.unregister(Group)
-admin.site.register(User, UserAdmin)
+admn.site.unregister(Group)
+admn.site.register(User, UserAdmin)
 
