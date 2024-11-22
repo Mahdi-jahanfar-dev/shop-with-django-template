@@ -49,3 +49,7 @@ class RegisterForm(forms.Form):
     password = forms.CharField(widget=forms.PasswordInput())
     email = forms.EmailField()
     full_name = forms.CharField(label='full name')
+
+
+class RegistrationForm(forms.Form):
+    code = forms.IntegerField()
