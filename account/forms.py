@@ -51,5 +51,5 @@ class RegisterForm(forms.Form):
     full_name = forms.CharField(label='full name')
 
 
-class RegistrationForm(forms.Form):
+class RegistrationCodeForm(forms.Form):
     code = forms.IntegerField()
