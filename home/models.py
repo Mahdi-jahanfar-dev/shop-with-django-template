@@ -23,7 +23,7 @@ class Product(models.Model):
     name = models.CharField(max_length=100)
     price = models.IntegerField()
     category = models.ManyToManyField(Category)
-    image = models.ImageField(upload_to='media/')
+    image = models.ImageField(upload_to='media/%Y/%m/%d/')
     description = models.TextField()
     slug = models.SlugField(null=True, blank=True)
 
