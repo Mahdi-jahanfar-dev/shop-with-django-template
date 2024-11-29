@@ -1,5 +1,6 @@
 {% load static %}
 
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -64,26 +65,40 @@
 
         <div class="content">
 
-            <h2>Register Code</h2>
-
             <form action="" method="post" class="form">
-
                 {% csrf_token %}
+                <h2>Login</h2>
+
+                {{ form.non_field_errors }}
 
                 <div class="form">
 
                     <div class="inputBox">
-                        <p style="color: white; margin-bottom: 5px;">{{ form.code.label }}</p>
-                        {{ form.code }}
+
+                        <p style="color: white; margin-bottom: 5px;">{{ form.phone_number.label }}</p>
+                        <p style="text-align: center; color: red">{{ form.phone_number.errors }}</p>
+                        {{ form.phone_number }}
 
                     </div>
 
-                    <button type="submit" style="background-color: lightgreen; height: 50px; border-radius: 10px;">Enter</button>
+                    <div class="inputBox">
+
+                        <p style="color: white; margin-bottom: 5px;">{{ form.password.label }}</p>
+
+                        {{ form.password }}
+
+                    </div>
+
+                    <button type="submit"
+                            style="background-color: lightgreen; height: 50px; border-radius: 10px; width: 100%">
+                        login
+                    </button>
 
                 </div>
             </form>
-
         </div>
+
+    </div>
 
     </div>
 

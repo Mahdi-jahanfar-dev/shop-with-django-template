@@ -2,11 +2,12 @@
 <!DOCTYPE html>
 <html lang="en">
 
-  <head>
+<head>
 
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap"
+          rel="stylesheet">
 
     <title>Lugx Gaming Shop HTML5 Template</title>
 
@@ -19,33 +20,33 @@
     <link rel="stylesheet" href="{% static 'css/templatemo-lugx-gaming.css' %}">
     <link rel="stylesheet" href="{% static 'css/owl.css' %}">
     <link rel="stylesheet" href="{% static 'css/animate.css' %}">
-    <link rel="stylesheet"href="https://unpkg.com/swiper@7/swiper-bundle.min.css"/>
-<!--
+    <link rel="stylesheet" href="https://unpkg.com/swiper@7/swiper-bundle.min.css"/>
+    <!--
 
-TemplateMo 589 lugx gaming
+    TemplateMo 589 lugx gaming
 
-https://templatemo.com/tm-589-lugx-gaming
+    https://templatemo.com/tm-589-lugx-gaming
 
--->
-  </head>
+    -->
+</head>
 
 <body>
 
-  <!-- ***** Preloader Start ***** -->
-  <div id="js-preloader" class="js-preloader">
+<!-- ***** Preloader Start ***** -->
+<div id="js-preloader" class="js-preloader">
     <div class="preloader-inner">
-      <span class="dot"></span>
-      <div class="dots">
-        <span></span>
-        <span></span>
-        <span></span>
-      </div>
+        <span class="dot"></span>
+        <div class="dots">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
     </div>
-  </div>
-  <!-- ***** Preloader End ***** -->
+</div>
+<!-- ***** Preloader End ***** -->
 
-  <!-- ***** Header Area Start ***** -->
-  <header class="header-area header-sticky">
+<!-- ***** Header Area Start ***** -->
+<header class="header-area header-sticky">
     <div class="container">
         <div class="row">
             <div class="col-12">
@@ -57,12 +58,16 @@ https://templatemo.com/tm-589-lugx-gaming
                     <!-- ***** Logo End ***** -->
                     <!-- ***** Menu Start ***** -->
                     <ul class="nav">
-                      <li><a href="index.html" class="active">Home</a></li>
-                      <li><a href="shop.html">Our Shop</a></li>
-                      <li><a href="product-details.html">Product Details</a></li>
-                      <li><a href="contact.html">Contact Us</a></li>
-                      <li><a href="#">Sign In</a></li>
-                  </ul>
+                        <li><a href="index.html" class="active">Home</a></li>
+                        <li><a href="shop.html">Our Shop</a></li>
+                        <li><a href="product-details.html">Product Details</a></li>
+                        <li><a href="contact.html">Contact Us</a></li>
+                        {% if request.user.is_authenticated %}
+                            <li><a href="">{{ request.user.phone_number }}</a></li>
+                        {% else %}
+                            <li><a href="{% url 'account:register' %}">Sign In</a></li>
+                        {% endif %}
+                    </ul>
                     <a class='menu-trigger'>
                         <span>Menu</span>
                     </a>
@@ -71,29 +76,32 @@ https://templatemo.com/tm-589-lugx-gaming
             </div>
         </div>
     </div>
-  </header>
-  <!-- ***** Header Area End ***** -->
+</header>
+<!-- ***** Header Area End ***** -->
 
 {% block content %}
 
 {% endblock %}
 
-  <footer>
+<footer>
     <div class="container">
-      <div class="col-lg-12">
-        <p>Copyright © 2048 LUGX Gaming Company. All rights reserved. &nbsp;&nbsp; <a rel="nofollow" href="https://templatemo.com" target="_blank">Design: TemplateMo</a></p>
-      </div>
+        <div class="col-lg-12">
+            <p>Copyright © 2048 LUGX Gaming Company. All rights reserved. &nbsp;&nbsp; <a rel="nofollow"
+                                                                                          href="https://templatemo.com"
+                                                                                          target="_blank">Design:
+                TemplateMo</a></p>
+        </div>
     </div>
-  </footer>
+</footer>
 
-  <!-- Scripts -->
-  <!-- Bootstrap core JavaScript -->
-  <script src="{% static 'jquery/jquery.min.js' %}"></script>
-  <script src="{% static 'bootstrap/js/bootstrap.min.js' %}"></script>
-  <script src="{% static 'js/isotope.min.js' %}"></script>
-  <script src="{% static 'js/owl-carousel.js' %}"></script>
-  <script src="{% static 'js/counter.js' %}"></script>
-  <script src="{% static 'js/custom.js' %}"></script>
+<!-- Scripts -->
+<!-- Bootstrap core JavaScript -->
+<script src="{% static 'jquery/jquery.min.js' %}"></script>
+<script src="{% static 'bootstrap/js/bootstrap.min.js' %}"></script>
+<script src="{% static 'js/isotope.min.js' %}"></script>
+<script src="{% static 'js/owl-carousel.js' %}"></script>
+<script src="{% static 'js/counter.js' %}"></script>
+<script src="{% static 'js/custom.js' %}"></script>
 
-  </body>
+</body>
 </html>

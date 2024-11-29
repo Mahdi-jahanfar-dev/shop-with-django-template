@@ -1,14 +1,133 @@
-{% extends 'base.html' %}
+{% load static %}
 
-{% block content %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>CodePen - Hacker Login Form</title>
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
 
-    <form action="" method="post">
-        {% csrf_token %}
+</head>
+<body>
+<!-- partial:index.partial.html -->
+<!doctype html>
 
-        {{ form.as_p }}
+<html lang="en">
 
-        <button type="submit" value="send">send</button>
+<head>
 
-    </form>
+    <meta charset="UTF-8">
 
-{% endblock %}
+    <title>CodePen - Animated Login Form using Html &amp; CSS Only</title>
+
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+
+</head>
+
+<body> <!-- partial:index.partial.html -->
+
+<section><span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span>
+    <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span>
+    <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span>
+    <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span>
+    <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span>
+    <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span>
+    <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span>
+    <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span>
+    <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span>
+    <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span>
+    <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span>
+    <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span>
+    <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span>
+    <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span>
+    <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span>
+    <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span>
+    <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span>
+    <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span>
+    <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span>
+    <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span>
+    <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span>
+    <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span>
+    <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span>
+    <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span>
+    <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span>
+    <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span>
+    <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span>
+    <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span>
+    <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span>
+    <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span>
+    <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span>
+    <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span>
+    <span></span> <span></span> <span></span> <span></span>
+
+    <div class="signin">
+
+        <div class="content">
+
+            <form action="" method="post" class="form">
+                {% csrf_token %}
+                <h2>Register</h2>
+
+                <div class="form">
+
+                    <div class="inputBox">
+
+                        <p style="color: white; margin-bottom: 5px;">{{ form.phone_number.label }}</p>
+                        <p style="text-align: center; color: red">{{ form.phone_number.errors }}</p>
+                        {{ form.phone_number }}
+
+                    </div>
+
+                    <div class="inputBox">
+
+                        <p style="color: white; margin-bottom: 5px;">{{ form.password1.label }}</p>
+
+                        {{ form.password1 }}
+
+                    </div>
+
+                    <div class="inputBox">
+
+                        <p style="color: white; margin-bottom: 5px;">{{ form.password2.label }}</p>
+                        <p style="text-align: center; background-color: red">{{ form.password2.errors }}</p>
+                        {{ form.password2 }}
+
+                    </div>
+
+                    <div class="inputBox">
+
+                        <p style="color: white; margin-bottom: 5px;">{{ form.email.label }}</p>
+
+                        {{ form.email }}
+
+                    </div>
+
+                    <div class="links"><a href="#">Forgot Password</a> <a href="#">Login</a>
+
+                    </div>
+
+                    <div class="inputBox">
+
+                        <button type="submit"
+                                style="background-color: lightgreen; height: 50px; border-radius: 10px; width: 100%">
+                            Register
+                        </button>
+
+                    </div>
+
+                </div>
+            </form>
+
+        </div>
+
+    </div>
+
+</section> <!-- partial -->
+
+</body>
+
+</html>
+<!-- partial -->
+
+</body>
+</html>
