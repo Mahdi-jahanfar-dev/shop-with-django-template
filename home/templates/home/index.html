@@ -86,7 +86,7 @@
                 <div class="col-lg-6">
                     <div class="section-heading">
                         <h6>Trending</h6>
-                        <h2>Trending Games</h2>
+                        <h2>Recent products</h2>
                     </div>
                 </div>
                 <div class="col-lg-6">
@@ -94,58 +94,26 @@
                         <a href="shop.html">View All</a>
                     </div>
                 </div>
-                <div class="col-lg-3 col-md-6">
-                    <div class="item">
-                        <div class="thumb">
-                            <a href="product-details.html"><img src="{% static 'images/trending-01.jpg' %}" alt=""></a>
-                            <span class="price"><em>$28</em>$20</span>
-                        </div>
-                        <div class="down-content">
-                            <span class="category">Action</span>
-                            <h4>Assasin Creed</h4>
-                            <a href="product-details.html"><i class="fa fa-shopping-bag"></i></a>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-3 col-md-6">
-                    <div class="item">
-                        <div class="thumb">
-                            <a href="product-details.html"><img src="{% static 'images/trending-02.jpg' %}" alt=""></a>
-                            <span class="price">$44</span>
-                        </div>
-                        <div class="down-content">
-                            <span class="category">Action</span>
-                            <h4>Assasin Creed</h4>
-                            <a href="product-details.html"><i class="fa fa-shopping-bag"></i></a>
+                {% for item in recent_products %}
+                    <div class="col-lg-3 col-md-6">
+                        <div class="item">
+                            <div class="thumb">
+                                <a href="{{ item.get_absolute_url }}"><img src="{{ item.image.url }}" alt=""></a>
+                                <span class="price">${{ item.price }}</span>
+                                {# this em is for discount #}
+{#                                <em>$28</em>#}
+                            </div>
+                            <div class="down-content">
+                                {% for i in item.category.all %}
+                                    <span class="category">{{ i.name }}</span>
+                                {% endfor %}
+                                <h4>{{ item.name }}</h4>
+                                <a href="product-details.html"><i class="fa fa-shopping-bag"></i></a>
+                            </div>
                         </div>
                     </div>
-                </div>
-                <div class="col-lg-3 col-md-6">
-                    <div class="item">
-                        <div class="thumb">
-                            <a href="product-details.html"><img src="{% static 'images/trending-03.jpg' %}" alt=""></a>
-                            <span class="price"><em>$64</em>$44</span>
-                        </div>
-                        <div class="down-content">
-                            <span class="category">Action</span>
-                            <h4>Assasin Creed</h4>
-                            <a href="product-details.html"><i class="fa fa-shopping-bag"></i></a>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-3 col-md-6">
-                    <div class="item">
-                        <div class="thumb">
-                            <a href="product-details.html"><img src="{% static 'images/trending-04.jpg' %}" alt=""></a>
-                            <span class="price">$32</span>
-                        </div>
-                        <div class="down-content">
-                            <span class="category">Action</span>
-                            <h4>Assasin Creed</h4>
-                            <a href="product-details.html"><i class="fa fa-shopping-bag"></i></a>
-                        </div>
-                    </div>
-                </div>
+
+                {% endfor %}
             </div>
         </div>
     </div>
